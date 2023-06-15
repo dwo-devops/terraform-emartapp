@@ -28,7 +28,7 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
 resource "aws_eks_cluster" "dwo-eks-cluster" {
   name     = var.cluster_name
   role_arn = aws_iam_role.myAmazonEKSClusterRole.arn
-  version = "1.24"
+  version  = "1.24"
 
   vpc_config {
     subnet_ids = [
@@ -51,4 +51,4 @@ output "kubeconfig-certificate-authority-data" {
 }
 
 # Connect to k8s cluster
-# aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster --profile terraform
+# aws eks --region us-east-1 update-kubeconfig --name my-eks --profile terraadmin
